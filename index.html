@@ -2051,7 +2051,7 @@
     const { error } = await sb.auth.signInWithPassword({ email, password });
 
     if(error){ err.textContent = 'Email atau kata sandi salah.'; return; }
-    if(ADMIN_EMAIL === 'GANTI_EMAIL_ADMIN_KAMU' || email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()){ await sb.auth.signOut(); err.textContent = 'Email ini bukan email admin yang dikonfigurasi di index.html.'; return; }
+    if(ADMIN_EMAIL === 'mr.meivcky@gmail.com' || email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()){ await sb.auth.signOut(); err.textContent = 'Email ini bukan email admin yang dikonfigurasi di index.html.'; return; }
     document.getElementById('adminPassword').value = '';
 
     // status admin diperbarui oleh onAuthStateChange
@@ -2070,7 +2070,7 @@
 
     sb.auth.onAuthStateChange((_event, session)=>{
 
-      isAdmin = !!session && !!session.user && String(session.user.email || '').toLowerCase() === ADMIN_EMAIL.toLowerCase() && ADMIN_EMAIL !== 'GANTI_EMAIL_ADMIN_KAMU';
+      isAdmin = !!session && !!session.user && String(session.user.email || '').toLowerCase() === ADMIN_EMAIL.toLowerCase() && ADMIN_EMAIL !== 'mr.meivcky@gmail.com';
 
       setTimeout(()=>{ renderAdminUi(); if(isAdmin && overlay.classList.contains('show')) { loadModeration(); loadAdminVideos(); loadLeads(); } }, 0);
 
