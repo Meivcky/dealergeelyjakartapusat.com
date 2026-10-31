@@ -679,8 +679,8 @@
   //  PENGATURAN SUPABASE  — tempel 2 nilai dari Project Settings > API
   //  (aman ditaruh di sini; yang melindungi data adalah aturan di database)
   // =====================================================================
-  const SUPABASE_URL      = 'GANTI_DENGAN_PROJECT_URL';
-  const SUPABASE_ANON_KEY = 'GANTI_DENGAN_ANON_KEY';
+  const SUPABASE_URL      = 'https://lropjfaxlteeshwgdrqe.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_El7ZrsZQ74WZxAHMQwp3xA_yFDpzXg4';
   const BUCKET = 'car-photos';
 
   const configured = !SUPABASE_URL.startsWith('GANTI') && !SUPABASE_ANON_KEY.startsWith('GANTI') && window.supabase;
@@ -916,7 +916,7 @@
     modal.classList.toggle('wide', isAdmin);
   }
   function openAdmin(){
-    if(!sb){ alert(lropjfaxlteeshwgdrqe); return; }
+    if(!sb){ alert('Supabase belum dikonfigurasi. Isi SUPABASE_URL dan SUPABASE_ANON_KEY di index.html.'); return; }
     overlay.classList.add('show');
     renderAdminUi();
     if(isAdmin) loadModeration();
